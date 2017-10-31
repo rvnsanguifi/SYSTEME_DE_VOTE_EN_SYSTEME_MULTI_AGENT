@@ -1,0 +1,39 @@
+Notre projet consiste à mettre en place un système multi-agents permettant d’effectuer le
+vote entre 2 candidats et plusieurs votant.
+
+Chaque agent dispose d’ une certaine quantité d'information et ne peut pas résoudre
+l'ensemble du problème. Les agents doivent partager les informations entre eux.
+Le Système de synchronisation sera mis en place, ce qui signifie que tous les agents sont
+capables de fonctionner après avoir reçu les instructions de requête.
+
+Pour la réalisation de notre projet, nous avons utilisé la méthodologie GAIA pour l’analyse
+puis le Framework JADE pour implémenter notre projet avec un environnement de
+développement intégré Eclipse.
+
+Ce système de vote nous permet de gérer le vote entre deux candidats. Notre système comporte trois (03) types d’agents. Il s’agit
+de l’agent votant, agent candidat et agent commission électoral. Chaque agent est capable
+de la planification, la négociation et la coopération avec d'autres agents pour bien faire le
+vote entre deux candidats.
+
+Rôle des agents du système:
+
+- Agent Commission Électorale : C’est l’agent qui est en charge d’organiser, gérer,
+compiler et publier le résultat de l’élection. Il enregistre les candidats présidentiel,
+envoi la liste des candidats chez l’agent votant, compile le vote en effectuant un
+compte de chaque vote des candidats, compare le nombre de vote du premier
+candidat à celui du second candidat, et trouve celui qui a plus de vote. A la fin, il
+publie le gagnant et donne le nombre de vote obtenu par le candidat gagnant.
+
+
+- Agent candidat : C’est l’agent qui doit être voté. Ils sont à deux (2), ils viennent
+s’enregistrer chez l’agent Commission Électorale et attendent le résultat de vote pour
+savoir s’ils sont élu ou déchu. Ces résultats lui seront envoyé via l’agent Commission
+Électorale.
+
+
+- Agent votant : C’est l’agent qui a le droit de voter les candidats présidentiels. Ils sont
+plusieurs et peuvent se créer à un nombre infini. Et une fois enregistré dans le
+système, ils reçoivent la liste de candidats présidentiel à voter. Cette liste provient de
+l’agent Commission électorale qui en fait, répond à la requête de l’agent votant qui
+lui demande de lui envoyer la liste de candidats enregistrés. En fin, il peut voter son
+candidat de choix et attendre le résultat final.
